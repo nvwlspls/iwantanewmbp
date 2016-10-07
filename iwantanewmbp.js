@@ -21,13 +21,22 @@ $(document).ready(function(){
         {id:5, group: 1, content:'iMac 27inch', start: new Date(2015, 4, 19)},
         {id:6, group: 1, content:'iMac 21inch', start: new Date(2015, 9, 13)},
         {id:7, group: 1, content:'Mac Pro', start: new Date(2013, 11, 18)},
-        {id:8, group: 2, content:"Event Name", start: new Date(2015, 11, 1)}
+        {id:8, group: 2, content:"Jade Rabbit Moon Rover Lands", start: new Date(2013, 11, 14)},
+        {id:9, group: 3, content:"iPhone 6 Released", start: new Date(2014, 08, 19)},
+        {id:10, group: 3, content:"iPhone 6s Released", start: new Date(2015, 08, 25)},
+        {id:11, group: 3, content:"iPhone 7 Released", start: new Date(2016, 08, 16)},
+        {id:12, group: 2, content:"Malaysia Airlines Flight 370 Disappears", start: new Date(2014, 02, 8)},
+        {id:13, group: 2, content:"WHO reports Ebola Outbreak", start: new Date(2014, 02, 25)},
+            {id:14, group: 2, content:"Patriots win superbowl XLIX", start: new Date(2015, 01, 1)},
     ]);
 
     var groups = new vis.DataSet([
-        {id:1, content:"Mac"},
-        {id:2, content:"Events"}
+        {id:1, content:"Mac", className:"mac"},
+        {id:2, content:"Events", className:"event"},
+        {id:3, content:"Tech Releases", className:"tech"}
     ]);
+
+
 
     var events = new vis.DataSet([
         {id:1, content:"Event Name", start: new Date(2015, 11, 1)}
@@ -48,4 +57,9 @@ $(document).ready(function(){
 
     $('#lastMbpUpdate').text(fullText);
     $('#diffInDays').text(diffInDaysText);
+
+    $('.mac').find('.vis-item-content').css('background',"lightblue");
+    $('.event').find('.vis-item-content').css('background',"yellowgreen");
+    $('.tech').find('.vis-item-content').css('background',"palevioletred");
+
 });
